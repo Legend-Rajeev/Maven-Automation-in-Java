@@ -10,8 +10,7 @@ import java.io.IOException;
  */
 
 public class CSVconfig{
-    public void CSVcheck(){
-        String file = "C:\\Users\\Rajeev\\Desktop\\file.csv";
+    public void CSVcheck(String file){
         try {
   
             // Create an object of filereader

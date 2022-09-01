@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Testing Google Apps">
-    <test name="CSVconfig">
+    <test name="StudentModule">
+         <classes>
+             <class name="Student.StudentModule"/>
+          </classes>
+     </test> <!-- Test -->
+     
+     <test name="CSVconfig">
          <classes>
              <class name="Config.CSVconfig"/>
           </classes>
