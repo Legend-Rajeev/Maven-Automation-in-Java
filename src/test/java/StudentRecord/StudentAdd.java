@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
  * @author Rajeev
  */
 public class StudentAdd {
-    
+  
     WebDriver driver = null;
     @Test(priority = 1)
     public void Login() throws InterruptedException{
@@ -35,7 +35,7 @@ public class StudentAdd {
     }
     
     @Test(priority = 2)
-    public void StudentAdd() throws InterruptedException{
+    public void StudentDataAdd() throws InterruptedException{
         Thread.sleep(3000);
        ((JavascriptExecutor)driver).executeScript("window.location.assign('"+Setup.studentadd+"');");
 

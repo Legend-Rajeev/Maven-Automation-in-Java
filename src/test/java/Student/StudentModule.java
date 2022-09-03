@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import StudentRecord.Registration;
+
 
 /**
  *
@@ -21,217 +23,9 @@ public class StudentModule {
     public void main() throws InterruptedException{
         System.setProperty("webdriver.chrome.driver", "C:\\MySkoolERP\\software\\chrome driver\\chromedriver.exe");
         driver = new ChromeDriver();
-    }
-    
-    @Test(priority = 2)
-    public void registration() throws InterruptedException{
-        driver.get(Setup.websiteLink);
         
-        Thread.sleep(3000);
-        ((JavascriptExecutor)driver).executeScript("window.location.assign('"+Setup.registrationLink+"');");
-        
-        // Create Dictionary for Student Registration
-        Dictionary stReg = new Hashtable();
-        stReg.put("registrationYear", Setup.registrationYear);
-        stReg.put("registrationClass", Setup.registrationClass);
-        stReg.put("regStuPhoto", Setup.regStuPhoto);
-        stReg.put("regStuName", Setup.regStuName);
-        stReg.put("trans_cert_photo", Setup.trans_cert_photo);
-        stReg.put("regStuGender", Setup.regStuGender);
-        stReg.put("regStuAdharno", Setup.regStuAdharno);
-        stReg.put("regStuDob", Setup.regStuDob);
-        stReg.put("regStuLastSchool", Setup.regStuLastSchool);
-        stReg.put("regStuSblStudy", Setup.regStuSblStudy);
-        stReg.put("regStuFatherName", Setup.regStuFatherName);
-        stReg.put("regStuTotalMarks", Setup.regStuTotalMarks);
-        stReg.put("regStuMarksObtained", Setup.regStuMarksObtained);
-        stReg.put("regStuMotherName", Setup.regStuMotherName);
-        stReg.put("regStuAnnualIncome", Setup.regStuAnnualIncome);
-        stReg.put("regStuTransCertNo", Setup.regStuTransCertNo);
-        stReg.put("regStuMobNo", Setup.regStuMobNo);
-        stReg.put("regStuTCisuDate", Setup.regStuTCisuDate);
-        stReg.put("regStuEmail", Setup.regStuEmail);
-        stReg.put("regStuAddress", Setup.regStuAddress);
-        stReg.put("regStuPermAddress", Setup.regStuPermAddress);
-        stReg.put("regStuPrevMarksheet", Setup.regStuPrevMarksheet);
-        stReg.put("regStuAltContNo", Setup.regStuAltContNo);
-        
-        
-        
-        // Registration Year Data 
-        String [] sessionYears = {"2022-2023","2023-2024","2024-2025","2025-2026"};
-        for(String sessionVal : sessionYears){
-            if(sessionVal==stReg.get("registrationYear")){
-                WebElement sessionYear = driver.findElement(By.xpath("//*[@id='Adm_schoolyearID']/option[text()='"+stReg.get("registrationYear")+"']"));
-                sessionYear.click();
-            }
-        }
-        
-        // Select Class Data
-        String [] classes = {"Arun","Uday","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve"};
-        for(String classesVal : classes){
-            if(classesVal==stReg.get("registrationClass")){
-                WebElement registrationClass = driver.findElement(By.xpath("//*[@id='Adm_classesID']/option[text()='"+stReg.get("registrationClass")+"']"));
-                registrationClass.click();
-            }
-        }    
-        
-        // Click on Forward Button for fill next details
-        WebElement forward = driver.findElement(By.xpath("//*[@id=\"header\"]/div[4]/div/div[4]/div/center/a"));
-        forward.click();
-        
-        // <======== Fill full registration details ========>
-        
-        Thread.sleep(3000);
-          //click on instruction/guidelines checkbox
-          WebElement aggrement = driver.findElement(By.xpath("//*[@id='termscondition']"));
-          aggrement.click();
-            
-        List<WebElement> input = driver.findElements(By.tagName("input"));
-        for(int i=0; i<input.size(); i++){
-            String name = input.get(i).getAttribute("name");
-            String value = input.get(i).getAttribute("value");
-            
-            if(value=="" && value==null){
-                switch(name){
-                    case "Uphoto" -> {
-                        // upload student password size photo
-                        WebElement st_pass_photo = driver.findElement(By.xpath("//*[@id=\"Uphoto\"]"));
-                        st_pass_photo.sendKeys(stReg.get("regStuPhoto").toString());
-                        break;
-                    }            
-                    case "name" -> {
-                        // Student Name
-                        WebElement student_name = driver.findElement(By.id("name"));
-                        student_name.sendKeys(stReg.get("regStuName").toString());
-                        break;
-                    }        
-                    case "slc" -> {
-                        // upload student Transfer Certificate Photo
-                        WebElement trans_cert_photo = driver.findElement(By.xpath("//*[@id=\"Uslc\"]"));
-                        trans_cert_photo.sendKeys(stReg.get("trans_cert_photo").toString());
-                        break;
-                    }
-                    case "sex" -> {
-                        // Student Gender
-                        String[] Genders = {"Male","Female"};
-                        for(String genderVal : Genders){
-                            if(genderVal==stReg.get("regStuGender").toString()){
-                                WebElement gender = driver.findElement(By.xpath("//*[@id=\"sex\"]/option[@value='"+stReg.get("regStuGender")+"']"));
-                                gender.click();
-                                break;
-                            }
-                        }
-                        break;
-                    }            
-                    case "aadhar_no" -> {
-                        // Student Aadhar No
-                        WebElement aadhar_no = driver.findElement(By.id("aadhar_no"));    
-                        aadhar_no.sendKeys(stReg.get("regStuAdharno").toString());
-                        break;
-                    }
-                    case "dob" -> {
-                        ((JavascriptExecutor)driver).executeScript ("document.getElementById('dob').removeAttribute('readonly');"); // Enables the from date box
-                        WebElement fromDateBox= driver.findElement(By.id("dob"));
-                        fromDateBox.clear();
-                       fromDateBox.sendKeys(stReg.get("regStuDob").toString()); //Enter date in required format
-                    }
-                    case "previous_school_name" -> {
-                        // Student Last School
-                        WebElement last_school = driver.findElement(By.id("previous_school_name"));    
-                        last_school.sendKeys(stReg.get("regStuLastSchool").toString());
-                        break;
-                    }        
-                    case "remarks1" -> {
-                        // Student Sibling Study in School
-                        WebElement sibling_study = driver.findElement(By.id("remarks1"));    
-                        sibling_study.sendKeys(stReg.get("regStuSblStudy").toString());
-                        break;
-                    }
-                    case "father_name" -> {
-                        // Student Father Name
-                        WebElement father_name = driver.findElement(By.id("father_name"));    
-                        father_name.sendKeys(stReg.get("regStuFatherName").toString());
-                        break;
-                    }
-                    case "total_marks" -> {
-                        // Student Total Marks
-                        WebElement total_marks = driver.findElement(By.id("total_marks"));    
-                        total_marks.sendKeys(stReg.get("regStuTotalMarks").toString());
-                        break;
-                    }
-                    case "total_marks_obtained" -> {
-                        // Student total_marks_obtained
-                        WebElement total_marks_obtained = driver.findElement(By.id("total_marks_obtained"));    
-                        total_marks_obtained.sendKeys(stReg.get("regStuMarksObtained").toString());
-                        break;
-                    }
-                    case "mother_name" -> {
-                        // Student Mother Name
-                        WebElement mother_name = driver.findElement(By.id("mother_name"));    
-                        mother_name.sendKeys(stReg.get("regStuMotherName").toString());
-                        break;
-                    }
-                    case "annual_income" -> {
-                        // Student Annual Income
-                        WebElement annual_income = driver.findElement(By.id("annual_income"));    
-                        annual_income.sendKeys(stReg.get("regStuAnnualIncome").toString());
-                        break;
-                    }
-                    case "transfer_certificate_no" -> {
-                        // Student Transfer Certifiacte No
-                        WebElement transfer_certificate_no = driver.findElement(By.id("transfer_certificate_no"));    
-                        transfer_certificate_no.sendKeys(stReg.get("regStuTransCertNo").toString());
-                        break;
-                    }
-                    case "phone" -> {
-                        // Student Phone Number
-                        WebElement phone = driver.findElement(By.id("phone"));    
-                        phone.sendKeys(stReg.get("regStuMobNo").toString());
-                        break;
-                    }
-                    case "tc_issue_date" -> {
-                        ((JavascriptExecutor)driver).executeScript ("document.getElementById('tc_issue_date').removeAttribute('readonly');"); // Enables the from date box
-                        WebElement fromDateBox= driver.findElement(By.id("tc_issue_date"));
-                        fromDateBox.clear();
-                       fromDateBox.sendKeys(stReg.get("regStuTCisuDate").toString()); //Enter date in required format
-                       break;
-                    }
-                    case "email" -> {
-                        // Student Email
-                        WebElement email = driver.findElement(By.id("email"));    
-                        email.sendKeys(stReg.get("regStuEmail").toString());
-                        break;
-                    }
-                    case "address" -> {
-                        // Student Address
-                        WebElement address = driver.findElement(By.id("address"));    
-                        address.sendKeys(stReg.get("regStuAddress").toString());
-                        break;
-                    }
-                    case "permanent_address" -> {
-                        // Student Permanent Address
-                        WebElement permanent_address = driver.findElement(By.id("permanent_address"));    
-                        permanent_address.sendKeys(stReg.get("regStuPermAddress").toString());
-                        break;
-                    }
-                    case "Uotherfile" -> {
-                        // upload student previous marksheet
-                        WebElement previous_marksheet = driver.findElement(By.xpath("//*[@id=\"Uotherfile\"]"));
-                        previous_marksheet.sendKeys(stReg.get("regStuPrevMarksheet").toString());
-                        break;
-                    }        
-                    case "alternate_contact_no" -> {
-                        // Student Alternate Contact Number
-                        WebElement alternate_contact_no = driver.findElement(By.id("alternate_contact_no"));
-                        alternate_contact_no.sendKeys(stReg.get("regStuAltContNo").toString());
-                        break;
-                    }                   
-                }
-            }
-            
-        }
-        
+        Registration obj = new Registration();
+        obj.registrationDetails(driver);
     }
     
     /*
@@ -248,10 +42,5 @@ public class StudentModule {
         WebElement loginBtn = driver.findElement(By.id("myBtn"));
         loginBtn.click();    
     }
-*/
-    
-    
-    
-    
-    
+    */
 }

@@ -5,7 +5,7 @@
     <classes>
       <class name="Student.StudentModule">
         <methods>
-          <include name="registration"/>
+          <include name="main"/>
         </methods>
       </class> <!-- Student.StudentModule -->
     </classes>
