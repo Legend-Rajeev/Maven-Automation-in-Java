@@ -20,11 +20,11 @@ public class Setup {
     public static String registrationYear = "2022-2023";
     public static String registrationClass = "Five";
     public static String regStuPhoto = "C:\\Users\\Rajeev\\Pictures\\multiple images\\arjun-mj-tHqvS69AfUY-unsplash.jpg";  // Student Registration Password Size Photo
-    public static String regStuName = "Ramesh";
+    public static String regStuName = "Anjali Kumari";
     public static String trans_cert_photo = "C:\\Users\\Rajeev\\Pictures\\multiple images\\arjun-mj-tHqvS69AfUY-unsplash.jpg";     // Student Transfer certificate photo
     public static String regStuGender = "Female";
     public static String regStuAdharno = "848927927492";
-    public static String regStuDob = "28-08-2015";        // Student Date of Birth
+    public static String regStuDob = "21-08-2015";        // Student Date of Birth
     public static String regStuLastSchool = "Last School";
     public static String regStuSblStudy = "";
     public static String regStuFatherName = "Mukesh Singh";
@@ -46,7 +46,7 @@ public class Setup {
         // input fields
         public static String adm_st_photo = "C:\\Users\\Rajeev\\Pictures\\multiple images\\arjun-mj-tHqvS69AfUY-unsplash.jpg";
         public static String adm_st_name = "Shivam";
-        public static String adm_st_roll = "36";
+        public static String adm_st_roll = "94";
         public static String adm_st_dob = "12-05-2018";
         public static String adm_st_aadhar = "4895790484";
         public static String adm_st_mother_name = "";

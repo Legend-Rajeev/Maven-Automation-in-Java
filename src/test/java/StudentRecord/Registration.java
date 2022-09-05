@@ -114,8 +114,11 @@ public class Registration {
                     }
                     case "dob" -> {
                         ((JavascriptExecutor)driver).executeScript ("document.getElementById('dob').removeAttribute('readonly');"); // Enables the from date box
+                        ((JavascriptExecutor)driver).executeScript ("document.getElementById('dob').setAttribute('value','"+stReg.get("regStuDob").toString()+"');"); // Enables the from date box
                         WebElement fromDateBox= driver.findElement(By.id("dob"));
-                        fromDateBox.sendKeys(stReg.get("regStuDob").toString()); //Enter date in required format
+//                        if(value==""){
+  //                          fromDateBox.sendKeys(stReg.get("regStuDob").toString()); //Enter date in required format
+    //                    }
                        break;
                     }
                     case "previous_school_name" -> {
@@ -245,14 +248,33 @@ public class Registration {
                 } 
             }
         }
-        // click on submit button for student registration 
+    }
+    
+    // click on submit button for student registration 
+    public void clicksubmitbtn(WebDriver driver) throws InterruptedException{
         WebElement submit_btn = driver.findElement(By.xpath("//center/a"));
         submit_btn.click();
-        
-        Thread.sleep(10000);
-        driver.switchTo().alert().accept();
-//        Alert alert = driver.switchTo().alert(); // switch to alert
-//        alert.accept();
+    }    
+    
+    // waiting for alert message 
+    public void waitForAlert(WebDriver driver) throws InterruptedException{
+        int i=0;
+        while(i++<5)
+        {
+             try
+             {
+                 Alert alert = driver.switchTo().alert();
+                 alert.accept();
+                 System.out.println("this is in try");
+                 break;
+             }
+             catch(Exception e)
+             {
+               Thread.sleep(5000);
+               System.out.println("this is in catch");
+               continue;
+             }
+        }
     }
     
     /*

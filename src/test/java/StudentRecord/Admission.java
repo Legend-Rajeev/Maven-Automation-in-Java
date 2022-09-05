@@ -1,4 +1,4 @@
-package Student;
+package StudentRecord;
 
 import Config.Setup;
 import java.util.*;
@@ -7,8 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+
 
 /**
  *
@@ -16,33 +15,10 @@ import org.testng.annotations.Test;
  */
 public class Admission {
     
-    WebDriver driver = null;
-    @Test(priority = 1)
-    public void main() throws InterruptedException{
-        System.setProperty("webdriver.chrome.driver", "C:\\MySkoolERP\\software\\chrome driver\\chromedriver.exe");
-        driver = new ChromeDriver();
-    }
-    
-    
-    @Test(priority = 2)
-    public void Login() throws InterruptedException{
-        driver.get(Setup.loginURL);
-        
-        String username = Setup.username;
-        String password = Setup.password;
-        driver.findElement(By.id("myInput2")).sendKeys(username);
-        driver.findElement(By.id("myInput")).sendKeys(password);
-        
-        //Click on Login          
-        WebElement loginBtn = driver.findElement(By.id("myBtn"));
-        loginBtn.click();    
-    }
-    
-    @Test (priority = 3)
-    public void admission() throws InterruptedException{
+    public void fill_admission_details(WebDriver driver) throws InterruptedException{
         Thread.sleep(3000);
         ((JavascriptExecutor)driver).executeScript("window.location.assign('"+Setup.admissionLink+"');");
-        /*
+        
         // click for search Student 
         WebElement search_stu = driver.findElement(By.xpath("//*[@id=\"s2id_fadmissionIDs\"]/a"));
         search_stu.click();
@@ -55,7 +31,7 @@ public class Admission {
         // Fetch Student Registration Details 
         WebElement getStudent = driver.findElement(By.id("get-btn"));
         getStudent.click();
-        */
+        
         
         // <========= Fill Student Admission Data ========>
     
@@ -159,7 +135,7 @@ public class Admission {
                     break;
                 }
                 case "district" -> {
-                    Thread.sleep(3000);
+                    Thread.sleep(5000);
                     WebElement disttrict = driver.findElement(By.xpath("//*[@id='district']/option[3]"));
                     disttrict.click();
                     break;
@@ -203,16 +179,14 @@ public class Admission {
                 case "name" -> {
                     if("".equals(value)){
                         input.get(i).clear();
-                        input.get(i).sendKeys(adm.get("adm_st_name").toString());                            
+                        input.get(i).sendKeys(adm.get("adm_st_name").toString());
                     }
                     break;
                 }
                 case "roll" -> {
-                    if("".equals(value)){
-                        ((JavascriptExecutor)driver).executeScript ("document.getElementById('roll').removeAttribute('readonly');"); 
-                        input.get(i).clear();
-                        input.get(i).sendKeys(adm.get("adm_st_roll").toString());                            
-                    }
+                    ((JavascriptExecutor)driver).executeScript ("document.getElementById('roll').removeAttribute('readonly');"); 
+                    input.get(i).clear();
+                    input.get(i).sendKeys(adm.get("adm_st_roll").toString());
                     break;
                 }
                 case "father_name" -> {
@@ -328,19 +302,27 @@ public class Admission {
                 }
             }
         }
-        
-        // click on next btn for go to payment 
+    }
+    
+    // click on next btn for go to payment
+    public void click_next_btn(WebDriver driver){
         WebElement next_btn = driver.findElement(By.xpath("//*[@id='next-btn']"));
         next_btn.click();
-        
+    }
+    
+    // click on collect payment button
+    public void click_collect_payment_btn(WebDriver driver) throws InterruptedException{
         Thread.sleep(5000);
         WebElement collect_payment_btn = driver.findElement(By.xpath("//*[@id=\"section-sub-view\"]/div[1]/div[3]/div/div/div/div/a[4]"));
         collect_payment_btn.click();
-        
+    }
+    
+    // click button for payment mode and select payment type and bank type than save payment
+    public void payment_mode(WebDriver driver) throws InterruptedException{
         Thread.sleep(5000);
-        driver.findElement(By.id("getpart3")).click();
-//        WebElement get_payment_mode = driver.findElement(By.id("getpart3"));
-  //      get_payment_mode.click(); 
+        // driver.findElement(By.id("getpart3")).click();
+        WebElement get_payment_mode = driver.findElement(By.xpath("//input[@id='getpart3']"));
+        get_payment_mode.click(); 
         
         // Select payment mode
         WebElement pay_type = driver.findElement(By.xpath("//*[@id='paytypeID']/option[2]"));
@@ -353,11 +335,30 @@ public class Admission {
         // Save Final Payment
         WebElement save_payment = driver.findElement(By.id("savepart3"));
         save_payment.click();
-        
-        Thread.sleep(2000);
-        Alert alert = driver.switchTo().alert(); // switch to alert
-        alert.accept();
-        
-        
     }
+    
+    // waiting for alert message 
+    public void waitForAlert(WebDriver driver) throws InterruptedException{
+        int i=0;
+        while(i++<5)
+        {
+             try
+             {
+                 Alert alert = driver.switchTo().alert();
+                 alert.accept();
+                 System.out.println("this is in try");
+                 break;
+             }
+             catch(Exception e)
+             {
+               Thread.sleep(2000);
+               System.out.println("this is in catch");
+               continue;
+             }
+        }
+    }
+    
+    
+    
+    
 }
