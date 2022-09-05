@@ -26,10 +26,10 @@ public class StudentModule {
     
     @Test(priority = 2)
     public void register() throws InterruptedException{
-        Registration obj = new Registration();
-        obj.registrationDetails(driver);
-        obj.clicksubmitbtn(driver);
-        obj.waitForAlert(driver);
+        Registration reg = new Registration();
+        reg.registrationDetails(driver);
+        reg.clicksubmitbtn(driver);
+        reg.waitForAlert(driver);
     }
     
     
@@ -53,31 +53,30 @@ public class StudentModule {
     
     @Test(priority = 5)
     public void studentadd() throws InterruptedException{
-        StudentAdd adm = new StudentAdd();
-        adm.fill_student_details(driver);
-        String stvalue = adm.stusernamevalue(driver);
-        adm.submit_student_details(driver);
-        adm.view_student(driver);
-        adm.get_student_username(driver, stvalue);
+        StudentAdd stadd = new StudentAdd();
+        stadd.fill_student_details(driver);
+        String stvalue = stadd.stusernamevalue(driver);
+        stadd.submit_student_details(driver);
+        stadd.view_student(driver);
+        stadd.get_student_username(driver, stvalue);
     }
     
     @Test(priority = 6)
     public void studentedit() throws InterruptedException{
-        StudentEdit adm = new StudentEdit();
-        adm.st_edit_btn(driver);
-        adm.fill_student_edit_details(driver);
-        adm.click_update_btn(driver);
-        adm.student_view_page(driver);
-        
+        StudentEdit stedit = new StudentEdit();
+        stedit.st_edit_btn(driver);
+        stedit.fill_student_edit_details(driver);
+        stedit.click_update_btn(driver);
+        stedit.student_view_page(driver);
     }
     
     @Test(priority = 7)
     public void studentdelete() throws InterruptedException{
-        StudentDelete adm = new StudentDelete();
-        adm.student_delete_btn(driver);        
-        adm.fill_student_delete_details(driver);        
-        adm.wait_for_alert(driver);        
-        adm.view_student(driver);        
+        StudentDelete stdel = new StudentDelete();
+        stdel.student_delete_btn(driver);        
+        stdel.fill_student_delete_details(driver);        
+        stdel.wait_for_alert(driver);        
+        stdel.view_student(driver);        
     }
     
 }
