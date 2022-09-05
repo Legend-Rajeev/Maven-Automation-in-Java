@@ -312,23 +312,28 @@ public class Admission {
     
     // click on collect payment button
     public void click_collect_payment_btn(WebDriver driver) throws InterruptedException{
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         WebElement collect_payment_btn = driver.findElement(By.xpath("//*[@id=\"section-sub-view\"]/div[1]/div[3]/div/div/div/div/a[4]"));
         collect_payment_btn.click();
     }
     
     // click button for payment mode and select payment type and bank type than save payment
     public void payment_mode(WebDriver driver) throws InterruptedException{
+        ArrayList<String> tabs2 = new ArrayList<> (driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+        
         Thread.sleep(5000);
         // driver.findElement(By.id("getpart3")).click();
         WebElement get_payment_mode = driver.findElement(By.xpath("//input[@id='getpart3']"));
         get_payment_mode.click(); 
         
         // Select payment mode
+        Thread.sleep(2000);
         WebElement pay_type = driver.findElement(By.xpath("//*[@id='paytypeID']/option[2]"));
         pay_type.click();
         
         // Select payment bank type
+        Thread.sleep(2000);
         WebElement bank_type = driver.findElement(By.xpath("//*[@id='bank_id']/option[text()='Cash In Hand']"));
         bank_type.click();
         
@@ -356,9 +361,8 @@ public class Admission {
                continue;
              }
         }
+        ArrayList<String> tabs2 = new ArrayList<> (driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(0));
     }
-    
-    
-    
     
 }

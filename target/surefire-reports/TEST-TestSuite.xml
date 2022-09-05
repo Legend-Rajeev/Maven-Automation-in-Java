@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="1" name="TestSuite" time="172.059" errors="0" skipped="0">
+<testsuite tests="7" failures="1" name="TestSuite" time="189.237" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="18.0.2.1+1-1"/>
@@ -60,27 +60,27 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Student.StudentModule" name="main" time="13.68"/>
-  <testcase classname="Student.StudentModule" name="register" time="35.775"/>
-  <testcase classname="Student.StudentModule" name="login" time="2.998"/>
-  <testcase classname="Student.StudentModule" name="admission" time="55.669">
-    <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;getpart3&apos;]&quot;}
+  <testcase classname="Student.StudentModule" name="main" time="10.214"/>
+  <testcase classname="Student.StudentModule" name="register" time="50.851"/>
+  <testcase classname="Student.StudentModule" name="login" time="8.753"/>
+  <testcase classname="Student.StudentModule" name="admission" time="47.75">
+    <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;section-sub-view&quot;]/div[1]/div[3]/div/div/div/div/a[4]&quot;}
   (Session info: chrome=104.0.5112.102)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;RAJEEV-PC&apos;, ip: &apos;192.168.1.4&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;18.0.2.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bb8999913575cb31c5d203afd2e96eae, findElement {using=xpath, value=//input[@id=&apos;getpart3&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.102, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\Rajeev\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51802}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51802/devtoo..., se:cdpVersion: 104.0.5112.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: bb8999913575cb31c5d203afd2e96eae" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;getpart3&apos;]&quot;}
+Command: [41d13f9efdd8f62991e5df8a2e319545, findElement {using=xpath, value=//*[@id=&quot;section-sub-view&quot;]/div[1]/div[3]/div/div/div/div/a[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.102, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\Rajeev\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50712}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50712/devtoo..., se:cdpVersion: 104.0.5112.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 41d13f9efdd8f62991e5df8a2e319545" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;section-sub-view&quot;]/div[1]/div[3]/div/div/div/div/a[4]&quot;}
   (Session info: chrome=104.0.5112.102)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;RAJEEV-PC&apos;, ip: &apos;192.168.1.4&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;18.0.2.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bb8999913575cb31c5d203afd2e96eae, findElement {using=xpath, value=//input[@id=&apos;getpart3&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.102, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\Rajeev\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51802}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51802/devtoo..., se:cdpVersion: 104.0.5112.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: bb8999913575cb31c5d203afd2e96eae
+Command: [41d13f9efdd8f62991e5df8a2e319545, findElement {using=xpath, value=//*[@id=&quot;section-sub-view&quot;]/div[1]/div[3]/div/div/div/div/a[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.102, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\Rajeev\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50712}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50712/devtoo..., se:cdpVersion: 104.0.5112.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 41d13f9efdd8f62991e5df8a2e319545
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -95,11 +95,11 @@ Session ID: bb8999913575cb31c5d203afd2e96eae
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at StudentRecord.Admission.payment_mode(Admission.java:324)
-	at Student.StudentModule.admission(StudentModule.java:49)
+	at StudentRecord.Admission.click_collect_payment_btn(Admission.java:316)
+	at Student.StudentModule.admission(StudentModule.java:51)
 </failure>
   </testcase>
-  <testcase classname="Student.StudentModule" name="studentadd" time="22.327"/>
-  <testcase classname="Student.StudentModule" name="studentedit" time="26.837"/>
-  <testcase classname="Student.StudentModule" name="studentdelete" time="14.773"/>
+  <testcase classname="Student.StudentModule" name="studentadd" time="25.027"/>
+  <testcase classname="Student.StudentModule" name="studentedit" time="31.941"/>
+  <testcase classname="Student.StudentModule" name="studentdelete" time="14.701"/>
 </testsuite>

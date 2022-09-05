@@ -1,5 +1,6 @@
 package Student;
 
+import Config.Setup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -8,6 +9,7 @@ import StudentRecord.Admission;
 import StudentRecord.Login;
 import StudentRecord.StudentDelete;
 import StudentRecord.StudentEdit;
+import org.openqa.selenium.JavascriptExecutor;
 
 
 /**
@@ -21,6 +23,8 @@ public class StudentModule {
     public void main() throws InterruptedException{
         System.setProperty("webdriver.chrome.driver", "C:\\MySkoolERP\\software\\chrome driver\\chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        
     }
     
     
@@ -30,6 +34,7 @@ public class StudentModule {
         reg.registrationDetails(driver);
         reg.clicksubmitbtn(driver);
         reg.waitForAlert(driver);
+        
     }
     
     
@@ -73,10 +78,11 @@ public class StudentModule {
     @Test(priority = 7)
     public void studentdelete() throws InterruptedException{
         StudentDelete stdel = new StudentDelete();
-        stdel.student_delete_btn(driver);        
+        stdel.student_delete_btn(driver);
         stdel.fill_student_delete_details(driver);        
         stdel.wait_for_alert(driver);        
         stdel.view_student(driver);        
     }
+    
     
 }

@@ -71,7 +71,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
             <version>4.4.0</version>
-            <scope>test</scope>
             <type>jar</type>
         </dependency>
     </dependencies>

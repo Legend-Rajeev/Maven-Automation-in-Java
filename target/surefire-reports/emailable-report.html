@@ -8,43 +8,17 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Testing Google Apps</th></tr>
-<tr><td><a href="#t0">StudentModule</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">172,144</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">CSVconfig</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">111</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">6</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">172,255</th><th colspan="2"></th></tr>
+<tr><th colspan="8">Student.StudentModule</th></tr>
+<tr><td><a href="#t0">Command line test</a></td><td class="num">7</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">311,414</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Testing Google Apps</th></tr></tbody><tbody id="t0"><tr><th colspan="4">StudentModule &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Student.StudentModule</td><td><a href="#m0">admission</a></td><td rowspan="1">1662360881897</td><td rowspan="1">55373</td></tr><tr><th colspan="4">StudentModule &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">Student.StudentModule</td><td><a href="#m1">login</a></td><td rowspan="1">1662360878903</td><td rowspan="1">2993</td></tr><tr class="passedeven"><td><a href="#m2">main</a></td><td rowspan="1">1662360829436</td><td rowspan="1">13608</td></tr><tr class="passedeven"><td><a href="#m3">register</a></td><td rowspan="1">1662360843050</td><td rowspan="1">35849</td></tr><tr class="passedeven"><td><a href="#m4">studentadd</a></td><td rowspan="1">1662360937564</td><td rowspan="1">22323</td></tr><tr class="passedeven"><td><a href="#m5">studentdelete</a></td><td rowspan="1">1662360986736</td><td rowspan="1">14773</td></tr><tr class="passedeven"><td><a href="#m6">studentedit</a></td><td rowspan="1">1662360959889</td><td rowspan="1">26845</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4" class="invisible"/></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Student.StudentModule</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="7">Student.StudentModule</td><td><a href="#m0">admission</a></td><td rowspan="1">1662372346650</td><td rowspan="1">101954</td></tr><tr class="passedeven"><td><a href="#m1">login</a></td><td rowspan="1">1662372336524</td><td rowspan="1">10121</td></tr><tr class="passedeven"><td><a href="#m2">main</a></td><td rowspan="1">1662372271140</td><td rowspan="1">11161</td></tr><tr class="passedeven"><td><a href="#m3">register</a></td><td rowspan="1">1662372282340</td><td rowspan="1">54169</td></tr><tr class="passedeven"><td><a href="#m4">studentadd</a></td><td rowspan="1">1662372448609</td><td rowspan="1">42764</td></tr><tr class="passedeven"><td><a href="#m5">studentdelete</a></td><td rowspan="1">1662372566364</td><td rowspan="1">16007</td></tr><tr class="passedeven"><td><a href="#m6">studentedit</a></td><td rowspan="1">1662372491377</td><td rowspan="1">74972</td></tr></tbody>
 </table>
-<h2>StudentModule</h2><h3 id="m0">Student.StudentModule#admission</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;getpart3&apos;]&quot;}
-  (Session info: chrome=104.0.5112.102)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;RAJEEV-PC&apos;, ip: &apos;192.168.1.4&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;18.0.2.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bb8999913575cb31c5d203afd2e96eae, findElement {using=xpath, value=//input[@id=&apos;getpart3&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.102, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\Rajeev\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51802}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51802/devtoo..., se:cdpVersion: 104.0.5112.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: bb8999913575cb31c5d203afd2e96eae
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at StudentRecord.Admission.payment_mode(Admission.java:324)
-	at Student.StudentModule.admission(StudentModule.java:49)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Command line test</h2><h3 id="m0">Student.StudentModule#admission</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m1">Student.StudentModule#login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m2">Student.StudentModule#main</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m3">Student.StudentModule#register</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m4">Student.StudentModule#studentadd</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m5">Student.StudentModule#studentdelete</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m6">Student.StudentModule#studentedit</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>CSVconfig</h2></body>
+</body>
 </html>
